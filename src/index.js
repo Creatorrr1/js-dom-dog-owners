@@ -25,12 +25,16 @@ for (let i = 0; i < data.length; i++) {
     dogListItem.addEventListener('click', function (event) {
         console.log("Dog clicked:", currentDog)
         event.preventDefault()
-
+        
         // const dogName = currentDog.name
         const mainCard = document.querySelector('.main__dog-section')
         mainCard.remove()
         // when diff button clicked remove currentDog displayed
+        // remove existing section
+        
         // add new section
+        // create card element, h2 element
+        // newCard section into the html 
         const main = document.querySelector('.main')
         const addSection = document.createElement("section")
         main.append(addSection)
@@ -57,24 +61,20 @@ for (let i = 0; i < data.length; i++) {
         const divButton = document.createElement('div')
         divButton.setAttribute('class', 'main__dog-section__btn')
         addSection.append(divButton)
+        // add a p tag with em tag in between it
+        const pTagForEm = document.createElement('p')
+        addSection.append(pTagForEm)
 
-
+        const emTagInPTag = document.createElement('em')
+        emTagInPTag.innerText = 'Is naughty?'
+        pTagForEm.append(emTagInPTag)
+        // add button
+        const behaviorButton = document.createElement('button')
+        behaviorButton.innerText = 'Good Dog!'
+        addSection.append(behaviorButton)
     })
 
-    // function NewCard (data) {
-    //     const dogName = currentDog.name
-    //     // const card = `
-    //     // <h2>${currentDog.name}</h2>
-    //     // <img
-    //     // src="${currentDog.image}"
-    //     // alt="${currentDog.name} photo"/>
-    //     // `
-    //    mainCard.innerHTML = card;
-    // }
 }
 
-// remove existing section
-// create card element, h2 element
-// newCard section into the html 
 
 
