@@ -129,10 +129,10 @@ const addDogButton = document.querySelector(".dogs-list__button--add")
 })
 //  -----
 
-function createDogListItem(name) {
-    const dogItem = document.createElement("li")
-    dogItem.setAttribute("class", "dogs-list__button")
-    dogItem.innerText = name
-    return dogItem
-  }
+// function createDogListItem(name) {
+//     const dogItem = document.createElement("li")
+//     dogItem.setAttribute("class", "dogs-list__button")
+//     dogItem.innerText = name
+//     return dogItem
+// }
 //  -----
