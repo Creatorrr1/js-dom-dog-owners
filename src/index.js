@@ -1,8 +1,6 @@
 console.log(data);
 
 
-
-
 // WRITE YOUR CODE BELOW!
 
 const dogListUl = document.querySelector('.dogs-list')
@@ -31,7 +29,7 @@ for (let i = 0; i < data.length; i++) {
         mainCard.remove()
         // when diff button clicked remove currentDog displayed
         // remove existing section
-        
+
         // add new section
         // create card element, h2 element
         // newCard section into the html 
@@ -49,14 +47,18 @@ for (let i = 0; i < data.length; i++) {
         const mainImg = document.createElement('img')
         mainImg.setAttribute('src', currentDog.image)
         addSection.append(mainImg)
+        // add div that hold h3 and p tag
+        const mainDiv = document.createElement('div')
+        mainDiv.setAttribute("class", "main__dog-section__desc")
+        addSection.append(mainDiv)
         // add bio
-        const dogBio = document.createElement('h3')
+        const dogBio = document.createElement("h3")
         dogBio.innerText = 'Bio'
-        addSection.append(dogBio)
+        mainDiv.append(dogBio)
         // add paragraph
         const dogPara = document.createElement('p')
-        dogBio.innerText = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, minima voluptates libero cumque rerum consequatur optio aliquid sint eum maxime illo laborum omnis quo ab rem cupiditate nulla perspiciatis ipsum!'
-        addSection.append(dogPara)
+        dogPara.innerText = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, minima voluptates libero cumque rerum consequatur optio aliquid sint eum maxime illo laborum omnis quo ab rem cupiditate nulla perspiciatis ipsum!'
+        mainDiv.append(dogPara)
         // add div with button
         const divButton = document.createElement('div')
         divButton.setAttribute('class', 'main__dog-section__btn')
@@ -73,8 +75,64 @@ for (let i = 0; i < data.length; i++) {
         behaviorButton.innerText = 'Good Dog!'
         addSection.append(behaviorButton)
     })
-
 }
+// -----
 
 
+// const dogListUl = document.querySelector(".dogs-list")
+const mainCard = document.querySelector(".main__dog-section")
+const addDogButton = document.querySelector(".dogs-list__button--add")
 
+// form !!!
+  addDogButton.addEventListener("click", () => {
+    // clear the html
+    mainCard.innerHTML = ""
+  
+    // create the form
+    const h2 = document.createElement("h2")
+    h2.innerText = "Add a new Dog"
+  
+    const form = document.createElement("form")
+    form.setAttribute("class", "form")
+  
+    const inputText = document.createElement("input")
+    inputText.setAttribute("type", "text")
+    inputText.setAttribute("id", "name")
+    inputText.setAttribute("id", "name")
+    inputText.setAttribute("name", "name")
+  
+    const inputUrl = document.createElement("input")
+    inputUrl.setAttribute("type", "url")
+    inputUrl.setAttribute("id", "image")
+    inputUrl.setAttribute("name", "image")
+  
+    const textArea = document.createElement("textarea")
+    textArea.setAttribute("rows", "5")
+    textArea.setAttribute("id", "bio")
+    textArea.setAttribute("name", "bio")
+  
+    const submitButton = document.createElement("input")
+    submitButton.setAttribute("type", "submit")
+    submitButton.setAttribute("id", "submit")
+    submitButton.setAttribute("name", "submit")
+    submitButton.setAttribute("value", "Let's add a dog!")
+    submitButton.setAttribute("class", "form__button")
+  
+    form.append(inputText)
+    form.append(inputUrl)
+    form.append(textArea)
+    form.append(submitButton)
+  
+  
+    mainCard.append(h2)
+    mainCard.append(form)
+})
+//  -----
+
+function createDogListItem(name) {
+    const dogItem = document.createElement("li")
+    dogItem.setAttribute("class", "dogs-list__button")
+    dogItem.innerText = name
+    return dogItem
+  }
+//  -----
